@@ -6,10 +6,60 @@
              mc:Ignorable="d"
              x:Class="Tarefas.Telas.Cadastro">
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+        <StackLayout Padding="20">
+            <Label Text="Nome" FontAttributes="Bold" />
+            <Entry x:Name="txtNome" />
+            <Label Text="Prioridade" FontAttributes="Bold"/>
+            <StackLayout x:Name="slPrioridades">
+                <StackLayout Spacing="10" Orientation="Horizontal">
+                    <Image>
+                        <Image.Source>
+                            <OnPlatform x:TypeArguments="ImageSource">
+                                <On Platform="Android, iOS" Value="p4.png" />
+                                <On Platform="UWP" Value="Resources/p4.png"/>
+                            </OnPlatform>
+                        </Image.Source>
+                    </Image>
+                    <Label Text="Urgente e Importante" HorizontalOptions="FillAndExpand" TextColor="Gray"/>
+                    <StackLayout.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="PrioridadeSelectAction" />
+                    </StackLayout.GestureRecognizers>
+                </StackLayout>
+                <StackLayout Spacing="10" Orientation="Horizontal">
+                    <Image>
+                        <Image.Source>
+                            <OnPlatform x:TypeArguments="ImageSource">
+                                <On Platform="Android, iOS" Value="p3.png" />
+                                <On Platform="UWP" Value="Resources/p3.png"/>
+                            </OnPlatform>
+                        </Image.Source>
+                    </Image>
+                    <Label Text="Urgente e Não importante" HorizontalOptions="FillAndExpand" TextColor="Gray"/>
+                </StackLayout>
+                <StackLayout Spacing="10" Orientation="Horizontal">
+                    <Image>
+                        <Image.Source>
+                            <OnPlatform x:TypeArguments="ImageSource">
+                                <On Platform="Android, iOS" Value="p2.png" />
+                                <On Platform="UWP" Value="Resources/p2.png"/>
+                            </OnPlatform>
+                        </Image.Source>
+                    </Image>
+                    <Label Text="Não Urgente e Importante" HorizontalOptions="FillAndExpand" TextColor="Gray"/>
+                </StackLayout>
+                <StackLayout Spacing="10" Orientation="Horizontal">
+                    <Image>
+                        <Image.Source>
+                            <OnPlatform x:TypeArguments="ImageSource">
+                                <On Platform="Android, iOS" Value="p1.png" />
+                                <On Platform="UWP" Value="Resources/p1.png"/>
+                            </OnPlatform>
+                        </Image.Source>
+                    </Image>
+                    <Label Text="Não Urgente e Não Importante" HorizontalOptions="FillAndExpand" TextColor="Gray"/>
+                </StackLayout>
+            </StackLayout>
+            <Button Text="OK" HorizontalOptions="End" TextColor="White" BackgroundColor="Blue"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
