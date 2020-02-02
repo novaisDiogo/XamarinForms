@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using Newtonsoft.Json;
 
 namespace Tarefas.Modelos
 {
@@ -9,19 +10,24 @@ namespace Tarefas.Modelos
         public List<Tarefa> Lista { get; set; }
         public void Salvar(Tarefa tarefa)
         {
+            Lista = Listagem();
             Lista.Add(tarefa);
 
             SalvarNoProperties(Lista);
         }
-        public void Deletar(Tarefa tarefa)
+        public void Deletar(int index)
         {
-            Lista.Remove(tarefa);
+            Lista = Listagem();
+            Lista.RemoveAt(index);
 
             SalvarNoProperties(Lista);
         }
         public void Finalizar(int index, Tarefa tarefa)
         {
+            Lista = Listagem();
             Lista.RemoveAt(index);
+
+            tarefa.DataFinalizacao = DateTime.Now;
             Lista.Add(tarefa);
             SalvarNoProperties(Lista);
         }
@@ -37,13 +43,19 @@ namespace Tarefas.Modelos
             {
                 App.Current.Properties.Remove("Tarefas");
             }
-            App.Current.Properties.Add("Tarefas", lista);
+
+            string jsonVal = JsonConvert.SerializeObject(lista);
+
+            App.Current.Properties.Add("Tarefas", jsonVal);
         }
         private List<Tarefa> ListagemNoPropeties()
         {
             if (App.Current.Properties.ContainsKey("Tarefas"))
             {
-                return (List<Tarefa>)App.Current.Properties["Tarefas"];
+                string jsonVal = (String)App.Current.Properties["Tarefas"];
+                List<Tarefa> lista = JsonConvert.DeserializeObject<List<Tarefa>>(jsonVal);
+
+                return lista;
             }
 
             return new List<Tarefa>();
