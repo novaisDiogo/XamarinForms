@@ -6,23 +6,51 @@
              mc:Ignorable="d"
              x:Class="Cinemix.MainPage">
     <ContentPage.Content>
-        <StackLayout>
-            <StackLayout Style="{StaticResource cabecalho}">
-                <Label Text="CINEMIX" Style="{StaticResource tituloApp}" />
-                <Label Text="seu app de cinema" Style="{StaticResource subTituloApp}" />
-            </StackLayout>
-            <StackLayout Style="{StaticResource conteudo}">
-                <Label Text="Lançamento" Style="{StaticResource lancamento}"/>
-                <Label Text="Pantera Negra" Style="{StaticResource tituloFilme}" />
-                <Grid>
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="Auto"></RowDefinition>
-                        <RowDefinition Height="Auto"></RowDefinition>
-                    </Grid.RowDefinitions>
+        <ScrollView>
+            <StackLayout>
+                <StackLayout Style="{StaticResource cabecalho}">
+                    <Label Text="CINEMIX" Style="{StaticResource tituloApp}" />
+                    <Label Text="seu app de cinema" Style="{StaticResource subTituloApp}" />
+                </StackLayout>
+                <StackLayout Style="{StaticResource conteudo}">
+                    <Label Text="Lançamento" Style="{StaticResource lancamento}"/>
+                    <Label Text="Pantera Negra" Style="{StaticResource tituloFilme}" />
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"></RowDefinition>
+                            <RowDefinition Height="Auto"></RowDefinition>
+                        </Grid.RowDefinitions>
 
-                    <Image Source="Fundo.png" Aspect="AspectFill" Grid.Row="0" Grid.Column="0" HorizontalOptions="Center"/>
-                </Grid>
+                        <Image Source="Fundo.png" Aspect="AspectFill" Grid.Row="0" Grid.Column="0" HorizontalOptions="Center" VerticalOptions="FillAndExpand"/>
+                        <Image Source="Poster.png" Margin="0,20,0,0" Grid.Row="0" Grid.Column="0" HorizontalOptions="Center" VerticalOptions="Start"/>
+
+                        <Label Text="Conheça a história de T'Challa, príncipe do reino de Wakanda, que perde o seu pai e viaja para os Estados Unidos, onde tem contato com os Vingadores. Entre as suas habilidades estão a velocidade, inteligência e os sentidos apurados."
+                               HorizontalOptions="Center"
+                               WidthRequest="460"
+                               Margin="0, 320, 0, 0"
+                               FontFamily="Segoe UI"
+                               TextColor="#947AC4"
+                               />
+                        <StackLayout Spacing="20" Margin="0,0,0,20" Orientation="Horizontal" HorizontalOptions="Center" VerticalOptions="End">
+                            <StackLayout Style="{StaticResource horario}">
+                                <Label Text="10:30H" TextColor="White"/>
+                            </StackLayout>
+                            <StackLayout Style="{StaticResource horario}">
+                                <Label Text="10:30H" TextColor="White"/>
+                            </StackLayout>
+                            <StackLayout Style="{StaticResource horario}">
+                                <Label Text="10:30H" TextColor="White"/>
+                            </StackLayout>
+                            <StackLayout Style="{StaticResource horario}">
+                                <Label Text="10:30H" TextColor="White"/>
+                            </StackLayout>
+                        </StackLayout>
+                    </Grid>
+                </StackLayout>
             </StackLayout>
-        </StackLayout>
+        </ScrollView>
     </ContentPage.Content>
 </ContentPage>

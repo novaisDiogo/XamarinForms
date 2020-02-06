@@ -39,6 +39,10 @@
                 <Setter Property="FontSize" Value="64" />
                 <Setter Property="VerticalOptions" Value="Center" />
             </Style>
+            <Style x:Key="horario" TargetType="StackLayout">
+                <Setter Property="BackgroundColor" Value="#947AC4"/>
+                <Setter Property="Padding" Value="15, 7"/>
+            </Style>
         </ResourceDictionary>
     </Application.Resources>
 </Application>
