@@ -5,12 +5,24 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
              x:Class="Cinemix.MainPage">
+    <ContentPage.Content>
+        <StackLayout>
+            <StackLayout Style="{StaticResource cabecalho}">
+                <Label Text="CINEMIX" Style="{StaticResource tituloApp}" />
+                <Label Text="seu app de cinema" Style="{StaticResource subTituloApp}" />
+            </StackLayout>
+            <StackLayout Style="{StaticResource conteudo}">
+                <Label Text="Lançamento" Style="{StaticResource lancamento}"/>
+                <Label Text="Pantera Negra" Style="{StaticResource tituloFilme}" />
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                    </Grid.RowDefinitions>
 
-    <StackLayout>
-        <!-- Place new controls here -->
-        <Label Text="Welcome to Xamarin.Forms!" 
-           HorizontalOptions="Center"
-           VerticalOptions="CenterAndExpand" />
-    </StackLayout>
-
+                    <Image Source="Fundo.png" Aspect="AspectFill" Grid.Row="0" Grid.Column="0" HorizontalOptions="Center"/>
+                </Grid>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
 </ContentPage>

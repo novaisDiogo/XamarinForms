@@ -6,6 +6,39 @@
              mc:Ignorable="d"
              x:Class="Cinemix.App">
     <Application.Resources>
-
+        <ResourceDictionary>
+            <Style x:Key="cabecalho" TargetType="StackLayout">
+                <Setter Property="Padding" Value="10" />
+                <Setter Property="Spacing" Value="0" />
+            </Style>
+            <Style x:Key="conteudo" TargetType="StackLayout">
+                <Setter Property="Padding" Value="10" />
+                <Setter Property="BackgroundColor" Value="#6A34B0" />
+                <Setter Property="HorizontalOptions" Value="FillAndExpand" />
+                <Setter Property="VerticalOptions" Value="FillAndExpand" />
+            </Style> 
+            <Style x:Key="titulo" TargetType="Label">
+                <Setter Property="FontFamily" Value="Segoe UI" />
+                <Setter Property="TextColor" Value="#6A34B0" />
+                <Setter Property="HorizontalOptions" Value="CenterAndExpand" />
+                <Setter Property="VerticalOptions" Value="CenterAndExpand" />
+            </Style>
+            <Style x:Key="tituloApp" TargetType="Label" BasedOn="{StaticResource titulo}">
+                <Setter Property="FontSize" Value="24" />
+            </Style>
+            <Style x:Key="subTituloApp" TargetType="Label" BasedOn="{StaticResource titulo}" >
+                <Setter Property="FontSize" Value="12" />
+            </Style>
+            <Style x:Key="lancamento" TargetType="Label" BasedOn="{StaticResource subTituloApp}">
+                <Setter Property="TextColor" Value="#947AC4" />
+                <Setter Property="HorizontalOptions" Value="Start" />
+                <Setter Property="VerticalOptions" Value="Start" />
+            </Style>
+            <Style x:Key="tituloFilme" TargetType="Label" BasedOn="{StaticResource subTituloApp}">
+                <Setter Property="TextColor" Value="#FFFFFF" />
+                <Setter Property="FontSize" Value="64" />
+                <Setter Property="VerticalOptions" Value="Center" />
+            </Style>
+        </ResourceDictionary>
     </Application.Resources>
 </Application>
